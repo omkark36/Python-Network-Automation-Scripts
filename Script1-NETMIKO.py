@@ -8,9 +8,17 @@ CSR = {
     "username":"admin",
     "password":"C1sco12345"
 }
+
+
+
 #establishes a connection to a Cisco IOS device using the ConnectHandler class and the CSR dictionary. 
 #It then sends commands to retrieve the routing table, configuration of a specific interface (Loopback 420), and configuration of a specific VRF (OMKAR).
 net_connect = ConnectHandler(**CSR)
+
+
+#The commands are executed using the send_command method of the net_connect object. 
+#The results are stored in the route, run_confi, and run_vrf variables, respectively.
+
 route = net_connect.send_command('sh ip route')
 run_confi = net_connect.send_command('sh run int Loopback 420')
 run_vrf = net_connect.send_command('sh run vrf OMKAR')
