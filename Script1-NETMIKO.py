@@ -20,17 +20,18 @@ net_connect = ConnectHandler(**CSR)
 #The results are stored in the route, run_confi, and run_vrf variables, respectively.
 
 route = net_connect.send_command('sh ip route')
-run_confi = net_connect.send_command('sh run int Loopback 420')
+run_config = net_connect.send_command('sh run int Loopback 420')
 run_vrf = net_connect.send_command('sh run vrf OMKAR')
 
 
 
 print(route)
-print(run_confi)
+print(run_config)
 print(run_vrf)
 
 #net_connect.disconnect, is used to close the network connection established with the Cisco IOS device. 
 #This is an essential step to free up system resources and ensure that the connection is properly terminated after the desired tasks have been completed
+
 net_connect.disconnect 
 
 
