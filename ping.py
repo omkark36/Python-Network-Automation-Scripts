@@ -1,4 +1,5 @@
-from re import findall
+
+from re import findall 
 from subprocess import Popen, PIPE
 
 def ping (host,ping_count):
@@ -16,7 +17,7 @@ def ping (host,ping_count):
         else:
             print(f"{ip} : Failed Ping")
 
-nodes = ["8.8.8.8", "facebook.com", "144.176.100.132"]
+nodes = ["8.8.8.8", "facebook.com", "x.x.x.x"]
 
 ping(nodes,3)
 
@@ -27,8 +28,5 @@ ping(nodes,3)
 
 
 
-##############################################################################
-
-from pythonping import ping
-
-ping('144.176.100.132', verbose=True)
+####################
+#
